@@ -27,7 +27,7 @@ class RequestBodyJsonEncoded implements RequestBodyInterface
     /**
      * Get the Body of the Request
      *
-     * @return string|null
+     * @return string
      */
     public function getBody()
     {

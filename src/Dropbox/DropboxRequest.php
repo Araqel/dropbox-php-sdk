@@ -89,6 +89,7 @@ class DropboxRequest
      */
     public function __construct($method, $endpoint, $accessToken, $endpointType = "api", array $params = [], array $headers = [], $contentType = null)
     {
+
         $this->setMethod($method);
         $this->setEndpoint($endpoint);
         $this->setAccessToken($accessToken);
@@ -99,6 +100,7 @@ class DropboxRequest
         if ($contentType) {
             $this->setContentType($contentType);
         }
+
     }
 
     /**

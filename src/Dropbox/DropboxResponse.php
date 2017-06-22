@@ -31,7 +31,7 @@ class DropboxResponse
      *
      * @var array
      */
-    protected $decodedBody = [];
+    protected $decodedBody;
 
     /**
      * The original request that returned this response
@@ -103,15 +103,14 @@ class DropboxResponse
     /**
      * Get the Decoded Body
      *
-     * @return array
+     * @return string
      */
     public function getDecodedBody()
     {
-        if (empty($this->decodedBody) || $this->decodedBody === null) {
+        if ($this->decodedBody === null) {
             //Decode the Response Body
             $this->decodeBody();
         }
-
         return $this->decodedBody;
     }
 
@@ -157,7 +156,9 @@ class DropboxResponse
         $body = $this->getBody();
 
         if (isset($this->headers['Content-Type']) && in_array('application/json', $this->headers['Content-Type'])) {
-            $this->decodedBody = (array) json_decode((string) $body, true);
+            $this->decodedBody = json_decode((string)$body, true);
+        } else {
+            $this->decodedBody = $this->body;
         }
 
         // If the response needs to be validated
@@ -171,8 +172,6 @@ class DropboxResponse
      * Validate Response
      *
      * @return void
-     *
-     * @throws \Kunnu\Dropbox\Exceptions\DropboxClientException
      */
     protected function validateResponse()
     {

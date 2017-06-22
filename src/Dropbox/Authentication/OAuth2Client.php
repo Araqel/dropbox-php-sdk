@@ -38,13 +38,6 @@ class OAuth2Client
     protected $client;
 
     /**
-     * Random String Generator
-     *
-     * @var \Kunnu\Dropbox\Security\RandomStringGeneratorInterface
-     */
-    protected $randStrGenerator;
-
-    /**
      * Create a new DropboxApp instance
      *
      * @param \Kunnu\Dropbox\DropboxApp $app
@@ -133,6 +126,9 @@ class OAuth2Client
      */
     public function getAccessToken($code, $redirectUri = null, $grant_type = 'authorization_code')
     {
+        //Access Token (Should most probably be null)
+        $accessToken = $this->getApp()->getAccessToken();
+
         //Request Params
         $params = [
         'code' => $code,
@@ -180,6 +176,6 @@ class OAuth2Client
         $request->setParams(['validateResponse' => false]);
 
         //Revoke Access Token
-        $this->getClient()->sendRequest($request);
+        $response = $this->getClient()->sendRequest($request);
     }
 }

@@ -26,7 +26,7 @@ class SessionPersistentDataStore implements PersistentDataStoreInterface
      *
      * @param  string $key Data Key
      *
-     * @return string|null
+     * @return string
      */
     public function get($key)
     {

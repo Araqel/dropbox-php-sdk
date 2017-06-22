@@ -66,14 +66,14 @@ class FileMetadata extends BaseModel
      * For files, this is the modification time set by the
      * desktop client when the file was added to Dropbox.
      *
-     * @var string
+     * @var DateTime
      */
     protected $client_modified;
 
     /**
      * The last time the file was modified on Dropbox.
      *
-     * @var string
+     * @var DateTime
      */
     protected $server_modified;
 
@@ -205,7 +205,7 @@ class FileMetadata extends BaseModel
     /**
      * Get the 'client_modified' property of the file model.
      *
-     * @return string
+     * @return DateTime
      */
     public function getClientModified()
     {
@@ -215,7 +215,7 @@ class FileMetadata extends BaseModel
     /**
      * Get the 'server_modified' property of the file model.
      *
-     * @return string
+     * @return DateTime
      */
     public function getServerModified()
     {

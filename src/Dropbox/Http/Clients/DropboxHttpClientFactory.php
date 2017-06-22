@@ -12,25 +12,25 @@ class DropboxHttpClientFactory
     /**
      * Make HTTP Client
      *
-     * @param  \Kunnu\Dropbox\Http\Clients\DropboxHttpClientInterface|\GuzzleHttp\Client|null $handler
+     * @param  DropboxHttpClientInterface|GuzzleHttp\Client|null $handler
      *
      * @return \Kunnu\Dropbox\Http\Clients\DropboxHttpClientInterface
      */
-    public static function make($handler)
+    public static function make($handler, $cacert )
     {
         //No handler specified
         if (!$handler) {
-            return new DropboxGuzzleHttpClient();
+            return new DropboxGuzzleHttpClient(null, $cacert );
         }
 
-        //Custom Implementation, maybe.
+        //Custom Implemenation, maybe.
         if ($handler instanceof DropboxHttpClientInterface) {
             return $handler;
         }
 
         //Handler is a custom configured Guzzle Client
         if ($handler instanceof Guzzle) {
-            return new DropboxGuzzleHttpClient($handler);
+            return new DropboxGuzzleHttpClient($handler, $cacert );
         }
 
         //Invalid handler

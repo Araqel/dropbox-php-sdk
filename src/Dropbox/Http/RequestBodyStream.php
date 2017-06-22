@@ -29,7 +29,7 @@ class RequestBodyStream implements RequestBodyInterface
     /**
      * Get the Body of the Request
      *
-     * @return string
+     * @return resource
      */
     public function getBody()
     {

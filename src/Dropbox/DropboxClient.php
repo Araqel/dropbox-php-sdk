@@ -175,7 +175,7 @@ class DropboxClient
     /**
      * Prepare a Request before being sent to the HTTP Client
      *
-     * @param  \Kunnu\Dropbox\DropboxRequest $request
+     * @param  DropboxResponse $request
      *
      * @return array [Request URL, Request Headers, Request Body]
      */

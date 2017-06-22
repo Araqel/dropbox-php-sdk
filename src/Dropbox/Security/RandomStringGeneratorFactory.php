@@ -33,14 +33,14 @@ class RandomStringGeneratorFactory
             return $generator;
         }
 
-        // Mcrypt
+        //Mcrypt
         if ('mcrypt' === $generator) {
-            return new McryptRandomStringGenerator();
+            return new McryptPseudoRandomStringGenerator();
         }
 
         //OpenSSL
         if ('openssl' === $generator) {
-            return new OpenSslRandomStringGenerator();
+            return new OpenSslPseudoRandomStringGenerator();
         }
 
         //Invalid Argument

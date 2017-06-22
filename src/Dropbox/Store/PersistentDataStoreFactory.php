@@ -2,6 +2,8 @@
 namespace Kunnu\Dropbox\Store;
 
 use InvalidArgumentException;
+use Kunnu\Dropbox\Exceptions\DropboxClientException;
+use Kunnu\Dropbox\Store\PersistentDataStoreInterface;
 
 /**
  * Thanks to Facebook

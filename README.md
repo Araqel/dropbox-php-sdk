@@ -1,3 +1,5 @@
+# **DON'T USE THIS SDK, ONLY FOR PRIVATE USE**
+
 Dropbox SDK v2 for PHP
 ======================================================
 [![Latest Stable Version](https://poser.pugx.org/kunalvarma05/dropbox-php-sdk/v/stable?format=flat-square)](https://packagist.org/packages/kunalvarma05/dropbox-php-sdk)
