@@ -1,5 +1,5 @@
 {
-    "name": "Araqel/dropbox-php-sdk-wd",
+    "name": "araqel/dropbox-php-sdk-wd",
     "description": "Dropbox PHP API V2 SDK (Unofficial)",
     "keywords" : ["dropbox", "sdk", "api", "client", "php", "unofficial"],
     "license": "MIT",
